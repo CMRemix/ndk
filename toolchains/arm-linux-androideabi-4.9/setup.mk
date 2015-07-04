@@ -60,7 +60,8 @@ TARGET_CFLAGS.neon := -mfpu=neon-vfpv4
 # Both release and debug are compiled with the arm instruction set to 
 # provide better performance than the thumb/thumb2 instruction set.
 TARGET_arm_release_CFLAGS :=  -marm\
-							  -O2 \
+			      -O3 \
+			      -g0
                               -DNDEBUG \
                               -fomit-frame-pointer \
                               -fstrict-aliasing    \
@@ -68,7 +69,7 @@ TARGET_arm_release_CFLAGS :=  -marm\
                               -finline-limit=300
 
 TARGET_thumb_release_CFLAGS := -marm \
-                               -Os \
+                               -O3 \
                                -DNDEBUG \
                                -fomit-frame-pointer \
                                -fno-strict-aliasing \
